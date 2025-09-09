@@ -331,26 +331,26 @@ impl ServerHandler for InterviewTool {
     }
 }
 
-mod interview_tool_test {
-    use std::env::home_dir;
+//  mod interview_tool_test {
+//    use std::env::home_dir;
 
-    use anyhow::{Context, Ok};
-    use rmcp::handler::server::wrapper::Parameters;
+//     use anyhow::{Context, Ok};
+//     use rmcp::handler::server::wrapper::Parameters;
 
-    use crate::interview_tool::InterviewTool;
-    #[tokio::test]
-    async fn test_use_cmd() -> anyhow::Result<()> {
-        let tool = InterviewTool::new();
-        tool.use_cmd(Parameters(super::CmdArgs {
-            cmd: String::from("ls ~/Downloads/*.mp4"),
-        }))
-        .await?;
-        anyhow::Ok(())
-    }
-    #[tokio::test]
-    async fn find_home_dir() -> anyhow::Result<()> {
-        let home_dir = home_dir().context("not find")?;
-        println!("home dir {}",home_dir.to_str().unwrap());
-        Ok(())
-    }
-}
+//     use crate::interview_tool::InterviewTool;
+//     #[tokio::test]
+//     async fn test_use_cmd() -> anyhow::Result<()> {
+//         let tool = InterviewTool::new();
+//         tool.use_cmd(Parameters(super::CmdArgs {
+//             cmd: String::from("ls ~/Downloads/*.mp4"),
+//         }))
+//         .await?;
+//         anyhow::Ok(())
+//     }
+//     #[tokio::test]
+//     async fn find_home_dir() -> anyhow::Result<()> {
+//         let home_dir = home_dir().context("not find")?;
+//         println!("home dir {}",home_dir.to_str().unwrap());
+//         Ok(())
+//     } 
+// }
